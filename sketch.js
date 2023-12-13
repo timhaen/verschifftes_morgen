@@ -28,7 +28,7 @@ function showSliderValue() {
 // Lade & zeichne die GEOJSON-DATEI
 d3.json("DATA/schweiz_kantone.geojson").then(function (json) {
   width = window.innerWidth - 250; // Breite des Fensters
-  height = window.innerHeight - 125; // Höhe des Fensters
+  height = window.innerHeight - 160; // Höhe des Fensters
 
   playButton.addEventListener("click", function () {
     if (isPlaying === true) {
@@ -63,7 +63,9 @@ d3.json("DATA/schweiz_kantone.geojson").then(function (json) {
     .select("body")
     .append("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(" + 0 + "," + 20 + ")");
 
   let paths = svg
     .selectAll("path")
@@ -274,7 +276,7 @@ function drawData(rainData, eventData) {
       return isNaN(d.niederschlagSumme) ? "" : Math.round(d.niederschlagSumme);
     })
     .style("fill", "black")
-    .style("font-size", "1.3vh")
+    .style("font-size", "10px")
     .style("font-family", "space grotesk");
 
   // Verwende d3.scaleOrdinal für die Farben der Extremereignisse

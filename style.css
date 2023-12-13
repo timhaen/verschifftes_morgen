@@ -75,9 +75,11 @@ p {
 }
 
 svg {
-  position: absolute;
-  margin-top: 8vh;
-  width: 84vw;
+/*    outline: solid 2px red;
+ */  position: absolute;
+  margin-top:8vh;
+  width: 75vw;
+  height: 82vh;
 }
 
 .ch-map {
@@ -87,7 +89,8 @@ svg {
 }
 
 .container-navigation {
-  height: 25px;
+/*   outline: solid 2px yellow;
+ */  height: 25px;
   display: flex;
   position: relative;
   margin-left: 3vw;
@@ -97,7 +100,8 @@ svg {
 
 /* Slider */
 .range-slider {
-  margin-left: 15px;
+/*   outline: solid 2px magenta;
+ */  margin-left: 15px;
   margin-top: 3px;
   position: relative;
 }
@@ -164,7 +168,7 @@ input {
   position: absolute;
   height: 12.5px;
   width: calc(7 / 10 * 88.8vw);
-  margin-left: 11.05vw;
+  margin-left: calc(3vw + 99.5px);
   margin-top: 94vh;
   z-index: 0;
   display: flex;
@@ -188,14 +192,15 @@ input {
 }
 
 :root {
-  --timeline-margin-top: calc(90vh + 40px);
+  --timeline-margin-top: calc(90vh + 5.5vh);
 }
 
 .timeline-label-container {
-  position: absolute;
-  height: 25px;
-  width: calc(7 / 10 * 89vw + 1.6vw);
-  margin-left: 10.2vw;
+/*   outline: solid 2px magenta;
+ */  position: absolute;
+  height: 1.3vh;
+  width: calc(7 / 10 * 89vw + 22px);
+  margin-left: calc(3vw + 88px);
   margin-top: var(--timeline-margin-top);
   z-index: 0;
   display: flex;
@@ -204,16 +209,17 @@ input {
 
 .timeline-label {
   font-family: "space grotesk";
-  font-size: 1.3vh;
+  font-size: 10px;
   color: rgb(200, 200, 200);
   margin-top: 4px;
 }
 
 .timeline-filling-container {
-  position: absolute;
+/*   outline: solid 2px rgba(0, 217, 255, 0.365);
+ */  position: absolute;
   height: 25px;
   width: calc(7 / 10 * 89.6vw);
-  margin-left: 10.75vw;
+  margin-left: calc(3vw + 94.3px);
   margin-top: 90vh;
   z-index: -1;
   display: flex;
