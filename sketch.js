@@ -322,7 +322,7 @@ function drawData(rainData, eventData) {
       tooltipBackground.attr("height", textHeight + 20); // 20 als zusätzlicher Abstand
 
       // Passe die Position des Texts an, um ihn vertikal zu zentrieren
-      tooltipText.attr("y", (textHeight + 25) / 2);
+      tooltipText.attr("y", (textHeight + 28) / 2);
     })
     .on("mouseout", function () {
       // Verstecke den Tooltip

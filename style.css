@@ -78,8 +78,9 @@ svg {
 /*    outline: solid 2px red;
  */  position: absolute;
   margin-top:8vh;
-  width: 75vw;
+  width: 100vw;
   height: 82vh;
+  z-index: 4;
 }
 
 .ch-map {
@@ -219,7 +220,7 @@ input {
  */  position: absolute;
   height: 25px;
   width: calc(7 / 10 * 89.6vw);
-  margin-left: calc(3vw + 94.3px);
+  margin-left: calc(3vw + 96.4px);
   margin-top: 90vh;
   z-index: -1;
   display: flex;
@@ -261,7 +262,6 @@ input {
 }
 
 .tooltip-text {
-  color: black;
   font-family: "space grotesk";
   font-size: 1.6vh;
 }
