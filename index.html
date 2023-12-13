@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verschifftes Morgen</title>
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <video id="video-background" autoplay muted loop>
+      <source src="GRAPHIC/rain_video2.mp4" type="video/mp4" />
+    </video>
+    <div id="video-overlay"></div>
+
+    <div class="container-titel">
+      <h1>Verschifftes Morgen</h1>
+      <h2 class="titel">Schweizer Niederschlag im Klimawandel</h2>
+    </div>
+
+    <div class="container-text">
+      <p>
+        Mit dem Klimawandel verändern sich die Niederschläge in der Schweiz.
+        Tendenziell wird es im Sommer trockener und im Winter nasser. Im Tessin
+        wird es mehr regnen, während es in der Westschweiz trockener wird.
+        Extreme Niederschlagsereignisse wie Hochwasser und Starkniederschläge
+        werden häufiger und intensiver.
+        <br /><br />
+        Die Visualisierung zeigt die durchschnittliche Niederschlagsentwicklung
+        von 1930 bis 2020. Zusätzlich sind extreme Niederschlagsereignisse
+        dargestellt. Bei insgesamt relativ konstantem Niederschlag ist eine
+        starke Zunahme der Extremereignisse in der jüngeren Vergangenheit zu
+        erkennen.
+        <br /><br /><br />
+      </p>
+
+      <img src="GRAPHIC/legende.svg" alt="Legende" class="legende-svg" />
+
+      <p id="quellen">
+        <br /><br />
+        Quellen <br />
+        Schweizer Sturmarchiv. Abgerufen 13. Dezember 2023,
+        https://www.sturmarchiv.ch/index.php?title=Fluten#2020-2029<br />
+        MeteoSchweiz – Bundesamt für Meteorologie und Klimatologie.
+        IDAWEB-Datenbank. Abgerufen 13. Dezember 2023.
+        https://gate.meteoswiss.ch/idaweb
+      </p>
+    </div>
+
+    <div class="container-navigation">
+      <!-- Play-Button -->
+      <button id="playButton"></button>
+
+      <!-- Text für das aktuelle Jahr -->
+      <span id="rs-bullet">1930</span>
+
+      <!-- Slider -->
+      <div class="range-slider">
+        <!-- Slidereinstellungen -->
+        <input
+          id="rs-range-line"
+          class="rs-range"
+          type="range"
+          value="1930"
+          min="1930"
+          max="2020"
+          step="1"
+        />
+        <div id="slider-labels"></div>
+      </div>
+    </div>
+
+    <div class="timeline-container">
+      <div class="baseline"></div>
+    </div>
+    <div class="timeline-label-container">
+      <div class="timeline-label">1930</div>
+      <div class="timeline-label">1940</div>
+      <div class="timeline-label">1950</div>
+      <div class="timeline-label">1960</div>
+      <div class="timeline-label">1970</div>
+      <div class="timeline-label">1980</div>
+      <div class="timeline-label">1990</div>
+      <div class="timeline-label">2000</div>
+      <div class="timeline-label">2010</div>
+      <div class="timeline-label">2020</div>
+    </div>
+
+    <div class="timeline-filling-container"></div>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>

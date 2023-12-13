@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  background-color: rgb(20, 20, 20);
+  flex-direction: row;
+  overflow: hidden;
+}
+
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+#video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  z-index: -2;
+}
+
+.container-titel {
+  position: absolute;
+  background-color: none;
+  z-index: 1;
+  margin-top: 3vh;
+  margin-left: 3vw;
+}
+
+h1,
+h2 {
+  font-family: "space grotesk";
+  color: rgb(230, 230, 230);
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.6vh;
+}
+
+h2 {
+  font-size: 2.25vh;
+}
+
+.container-text {
+  position: absolute;
+  z-index: 1;
+  width: 18vw;
+  right: 3vw;
+  margin-top: 8vh;
+}
+
+p {
+  font-family: "space grotesk";
+  font-size: 1.67vh;
+  color: rgb(230, 230, 230);
+  margin: 0;
+  hyphens: auto;
+  /*   text-align: justify
+ */
+}
+
+#quellen {
+  color: rgb(100, 100, 100);
+  font-size: 1vh;
+}
+
+svg {
+  position: absolute;
+  margin-top: 8vh;
+  width: 84vw;
+}
+
+.ch-map {
+  fill: rgba(40, 40, 40, 0.8);
+  stroke: rgb(140, 140, 140);
+  stroke-width: 0.4;
+}
+
+.container-navigation {
+  height: 25px;
+  display: flex;
+  position: relative;
+  margin-left: 3vw;
+  margin-top: 90vh;
+  z-index: 1;
+}
+
+/* Slider */
+.range-slider {
+  margin-left: 15px;
+  margin-top: 3px;
+  position: relative;
+}
+
+/* Länge und Farbe des Sliders */
+#rs-range-line {
+  width: calc(7 / 10 * 89vw);
+  height: 15px;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+
+/* Aktive Farbe des Sliders */
+input[type="range"]:active {
+  opacity: 1;
+}
+
+input::-webkit-slider-thumb {
+  width: 3px;
+  height: 34px;
+  background-color: white;
+  border: none;
+  border-radius: none;
+  top: -10px; /* Ändere diesen Wert entsprechend deiner Anforderungen */
+  transform: translateY(
+    100
+  ); /* Sicherstellen, dass die Y-Position korrekt gesetzt ist */
+  -webkit-appearance: none;
+}
+
+input {
+  width: 400px;
+  height: var(--s);
+  cursor: pointer;
+}
+
+/* Text */
+#rs-bullet {
+  width: 42px;
+  font-family: "space grotesk";
+  font-size: 2vh;
+  color: #ffffff;
+  margin-left: 15px;
+  margin-top: 3px;
+}
+
+/* Button */
+#playButton {
+  position: flex;
+  width: 25px;
+  height: 25px;
+  background-image: url("GRAPHIC/play.svg");
+  background-size: 100% 100%;
+  background-color: rgba(20, 20, 20, 0);
+  border: none;
+  opacity: 0.6;
+}
+
+#playButton:hover {
+  opacity: 1;
+}
+
+.timeline-container {
+  position: absolute;
+  height: 12.5px;
+  width: calc(7 / 10 * 88.8vw);
+  margin-left: 11.05vw;
+  margin-top: 94vh;
+  z-index: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  width: 1px;
+  height: 100%;
+  background-color: rgb(200, 200, 200);
+}
+
+.baseline {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(200, 200, 200);
+  z-index: 0;
+  display: flex;
+  bottom: 0;
+}
+
+:root {
+  --timeline-margin-top: calc(90vh + 40px);
+}
+
+.timeline-label-container {
+  position: absolute;
+  height: 25px;
+  width: calc(7 / 10 * 89vw + 1.6vw);
+  margin-left: 10.2vw;
+  margin-top: var(--timeline-margin-top);
+  z-index: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeline-label {
+  font-family: "space grotesk";
+  font-size: 1.3vh;
+  color: rgb(200, 200, 200);
+  margin-top: 4px;
+}
+
+.timeline-filling-container {
+  position: absolute;
+  height: 25px;
+  width: calc(7 / 10 * 89.6vw);
+  margin-left: 10.75vw;
+  margin-top: 90vh;
+  z-index: -1;
+  display: flex;
+}
+
+.filling {
+  width: 1.11111%;
+  background-color: "red";
+}
+
+.legende-svg {
+  width: 90%;
+}
+
+.event-group {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+/* .hexagon-group{
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
+} */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tooltip-background {
+  fill: rgba(255, 255, 255, 0.9);
+  stroke: white;
+  stroke-width: 2px;
+  height: 200;
+}
+
+.tooltip-text {
+  color: black;
+  font-family: "space grotesk";
+  font-size: 1.6vh;
+}
